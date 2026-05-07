@@ -1,0 +1,219 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-15T18:15:40.671Z",
+    "end": "2026-04-15T18:16:04.964Z",
+    "duration": 24293,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "aaa91e2e-e260-475d-8038-eb68581b4054",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login.cy.js",
+      "file": "cypress\\e2e\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fbd3c1f3-8a72-4146-bd5e-c1073f8726f0",
+          "title": "Login Feature - Bajapro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "FS_Login_001 - Login berhasil dengan data valid",
+              "fullTitle": "Login Feature - Bajapro FS_Login_001 - Login berhasil dengan data valid",
+              "timedOut": null,
+              "duration": 7300,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login('zulfanuha016@gmail.com', 'Zulfanuha14');\ncy.url().should('not.include', '/login');",
+              "err": {},
+              "uuid": "cd37a907-17a4-4d85-bfd0-51ea0e000e97",
+              "parentUUID": "fbd3c1f3-8a72-4146-bd5e-c1073f8726f0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_Login_002 - Email salah",
+              "fullTitle": "Login Feature - Bajapro FS_Login_002 - Email salah",
+              "timedOut": null,
+              "duration": 5299,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login('salah@test.com', 'Zulfanuha14');\ncy.contains('These credentials do not match our records').should('be.visible');",
+              "err": {},
+              "uuid": "8f22be89-a312-489f-8027-7c6e4763ada2",
+              "parentUUID": "fbd3c1f3-8a72-4146-bd5e-c1073f8726f0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_Login_003 - Password salah",
+              "fullTitle": "Login Feature - Bajapro FS_Login_003 - Password salah",
+              "timedOut": null,
+              "duration": 3000,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login('zulfanuha016@gmail.com', 'SalahPassword');\ncy.contains('These credentials do not match our records').should('be.visible');",
+              "err": {},
+              "uuid": "b4a7f977-e667-4b3d-820a-b4473883ff8e",
+              "parentUUID": "fbd3c1f3-8a72-4146-bd5e-c1073f8726f0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_Login_004 - Semua field kosong",
+              "fullTitle": "Login Feature - Bajapro FS_Login_004 - Semua field kosong",
+              "timedOut": null,
+              "duration": 1502,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('button[type=\"submit\"]').click();\ncy.get('input[name=\"email\"]:invalid').should('exist');",
+              "err": {},
+              "uuid": "8296ccf3-a091-40dd-9a62-861600539d91",
+              "parentUUID": "fbd3c1f3-8a72-4146-bd5e-c1073f8726f0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_Login_005 - Email kosong",
+              "fullTitle": "Login Feature - Bajapro FS_Login_005 - Email kosong",
+              "timedOut": null,
+              "duration": 1277,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('input[name=\"password\"]').type('Zulfanuha14');\ncy.get('button[type=\"submit\"]').click();\ncy.get('input[name=\"email\"]:invalid').should('exist');",
+              "err": {},
+              "uuid": "08ec8a26-5545-40ac-a45c-74b63c72e50a",
+              "parentUUID": "fbd3c1f3-8a72-4146-bd5e-c1073f8726f0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_Login_006 - Password kosong",
+              "fullTitle": "Login Feature - Bajapro FS_Login_006 - Password kosong",
+              "timedOut": null,
+              "duration": 1526,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('input[name=\"email\"]').type('zulfanuha016@gmail.com');\ncy.get('button[type=\"submit\"]').click();\ncy.get('input[name=\"password\"]:invalid').should('exist');",
+              "err": {},
+              "uuid": "b365b407-e86a-48d3-be32-8c001f899797",
+              "parentUUID": "fbd3c1f3-8a72-4146-bd5e-c1073f8726f0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_Login_007 - Pindah ke halaman register",
+              "fullTitle": "Login Feature - Bajapro FS_Login_007 - Pindah ke halaman register",
+              "timedOut": null,
+              "duration": 1616,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains(/don't have an account/i).should('be.visible').click();\ncy.url().should('include', '/register');",
+              "err": {},
+              "uuid": "0b94af00-f941-4aae-824d-23b20247b3e3",
+              "parentUUID": "fbd3c1f3-8a72-4146-bd5e-c1073f8726f0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "cd37a907-17a4-4d85-bfd0-51ea0e000e97",
+            "8f22be89-a312-489f-8027-7c6e4763ada2",
+            "b4a7f977-e667-4b3d-820a-b4473883ff8e",
+            "8296ccf3-a091-40dd-9a62-861600539d91",
+            "08ec8a26-5545-40ac-a45c-74b63c72e50a",
+            "b365b407-e86a-48d3-be32-8c001f899797",
+            "0b94af00-f941-4aae-824d-23b20247b3e3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 21520,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-15T18:16:37.124Z",
+    "end": "2026-04-15T18:17:08.330Z",
+    "duration": 31206,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "beba02e1-883e-4241-8c8b-06b130f48ab4",
+      "title": "",
+      "fullFile": "cypress\\e2e\\mycourse.cy.js",
+      "file": "cypress\\e2e\\mycourse.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7cd839d7-35cf-4fcb-acac-4e833e3b3701",
+          "title": "My Course Feature - Bajapro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "FS_Course_001 - Buka halaman My Course",
+              "fullTitle": "My Course Feature - Bajapro FS_Course_001 - Buka halaman My Course",
+              "timedOut": null,
+              "duration": 7434,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('My Course').click();\ncy.url().should('include', '/courses/my_course');\ncy.contains('Take Your Lesson now').should('be.visible');",
+              "err": {},
+              "uuid": "e24a5f5d-2c54-42da-80d0-0330ac57a688",
+              "parentUUID": "7cd839d7-35cf-4fcb-acac-4e833e3b3701",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_Course_002 - Lihat daftar course",
+              "fullTitle": "My Course Feature - Bajapro FS_Course_002 - Lihat daftar course",
+              "timedOut": null,
+              "duration": 3794,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('My Course').click();\ncy.contains('Start Lesson').should('be.visible');",
+              "err": {},
+              "uuid": "f6ec6591-0faf-4168-a7a4-54662f53d364",
+              "parentUUID": "7cd839d7-35cf-4fcb-acac-4e833e3b3701",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_Course_003 - Masuk ke halaman level",
+              "fullTitle": "My Course Feature - Bajapro FS_Course_003 - Masuk ke halaman level",
+              "timedOut": null,
+              "duration": 4096,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('My Course').click();\ncy.contains('Start Lesson').click();\ncy.url().should('include', '/courses/level');\ncy.contains('Start Your Lesson now').should('be.visible');",
+              "err": {},
+              "uuid": "3469058c-a38e-427d-8656-fcbd72563a22",
+              "parentUUID": "7cd839d7-35cf-4fcb-acac-4e833e3b3701",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_Course_004 - Pilih Level Easy",
+              "fullTitle": "My Course Feature - Bajapro FS_Course_004 - Pilih Level Easy",
+              "timedOut": null,
+              "duration": 8208,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('My Course').click();\ncy.contains('Start Lesson').first().click();\ncy.contains('Easy').parent().contains('Start Lesson').click();\ncy.url().should('include', '/detail');",
+              "err": {},
+              "uuid": "b3389762-2cb8-4d71-acdb-b6d4bf05c11e",
+              "parentUUID": "7cd839d7-35cf-4fcb-acac-4e833e3b3701",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_Course_005 - Level Medium terkunci",
+              "fullTitle": "My Course Feature - Bajapro FS_Course_005 - Level Medium terkunci",
+              "timedOut": null,
+              "duration": 3699,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('My Course').click();\ncy.contains('Start Lesson').click();\ncy.contains('Medium').parent().find('a').should('have.attr', 'aria-disabled', 'true');",
+              "err": {},
+              "uuid": "99099062-8366-4c30-bb22-a14881441287",
+              "parentUUID": "7cd839d7-35cf-4fcb-acac-4e833e3b3701",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e24a5f5d-2c54-42da-80d0-0330ac57a688",
+            "f6ec6591-0faf-4168-a7a4-54662f53d364",
+            "3469058c-a38e-427d-8656-fcbd72563a22",
+            "b3389762-2cb8-4d71-acdb-b6d4bf05c11e",
+            "99099062-8366-4c30-bb22-a14881441287"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 27231,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
