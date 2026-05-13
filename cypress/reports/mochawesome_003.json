@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-05-10T11:06:40.891Z",
-    "end": "2026-05-10T11:06:49.240Z",
-    "duration": 8349,
+    "start": "2026-05-13T15:08:20.783Z",
+    "end": "2026-05-13T15:08:25.570Z",
+    "duration": 4787,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "7930fe2c-53d2-4bbb-a343-6fdd7bc3e03a",
+      "uuid": "81ee0e90-a4be-40ab-803b-b92f214e2dfd",
       "title": "",
       "fullFile": "cypress\\e2e\\functional-suitability\\explain_ts009.cy.js",
       "file": "cypress\\e2e\\functional-suitability\\explain_ts009.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "fcbe30c7-36b3-4562-8455-e3dbc20ef400",
+          "uuid": "b1caa915-92c5-4c4e-b4ac-291390defa44",
           "title": "Explanation - Empty State",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,29 @@
               "title": "FS_Explain_009 - User belum ada data",
               "fullTitle": "Explanation - Empty State FS_Explain_009 - User belum ada data",
               "timedOut": null,
-              "duration": 8242,
+              "duration": 4755,
               "state": "passed",
-              "speed": "medium",
+              "speed": "fast",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "Cypress.on('uncaught:exception', () => false);\ncy.clearCookies();\ncy.clearLocalStorage();\ncy.visit('/login');\ncy.get('input[name=\"email\"]').type('akunbaru@test.com');\ncy.get('input[name=\"password\"]').type('akunbaru12');\ncy.get('button[type=\"submit\"]').click();\ncy.contains('Explanation').click();\ncy.get('body').then($body => {\n  const text = $body.text();\n  if (text.includes('Not Available') || text.includes('Belum')) {\n    expect(true).to.be.true;\n  } else {\n    cy.log('Tidak ada empty state, kemungkinan tetap tampil table kosong');\n  }\n});",
               "err": {},
-              "uuid": "b3bef651-3a87-441f-b111-e897412fd7d0",
-              "parentUUID": "fcbe30c7-36b3-4562-8455-e3dbc20ef400",
+              "uuid": "1d83eca5-cc54-4a11-a08e-9f05130516f4",
+              "parentUUID": "b1caa915-92c5-4c4e-b4ac-291390defa44",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "b3bef651-3a87-441f-b111-e897412fd7d0"
+            "1d83eca5-cc54-4a11-a08e-9f05130516f4"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 8242,
+          "duration": 4755,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

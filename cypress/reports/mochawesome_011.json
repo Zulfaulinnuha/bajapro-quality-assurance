@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-05-10T11:16:55.598Z",
-    "end": "2026-05-10T11:17:09.398Z",
-    "duration": 13800,
+    "start": "2026-05-13T15:12:20.757Z",
+    "end": "2026-05-13T15:12:29.516Z",
+    "duration": 8759,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "98b7de14-40eb-43aa-bbb9-00ff993e1417",
+      "uuid": "b734b029-3bb7-4351-9a1b-f2c579f49508",
       "title": "",
       "fullFile": "cypress\\e2e\\functional-suitability\\start_lesson.cy.js",
       "file": "cypress\\e2e\\functional-suitability\\start_lesson.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "3db517fd-79c8-4f57-9bda-e58a43028ebb",
+          "uuid": "b72aa514-c482-40cf-9ce0-fdb42f60c1c8",
           "title": "Flow Memulai Pelajaran (Start Lesson)",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,29 @@
               "title": "User dapat memilih Course Java lalu masuk ke Level Easy",
               "fullTitle": "Flow Memulai Pelajaran (Start Lesson) User dapat memilih Course Java lalu masuk ke Level Easy",
               "timedOut": null,
-              "duration": 13527,
+              "duration": 8618,
               "state": "passed",
-              "speed": "slow",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.contains('.card', 'Java') // Cari kotak kartu Java\n.contains('Start Lesson') // Cari teks Start Lesson di dalam kotak itu\n.click();\ncy.url({\n  timeout: 20000\n}).should('include', '/courses/level');\ncy.contains('h2', 'Start Your Lesson now').should('be.visible');\n// 3. Validasi ada 3 Pilihan Level (Easy, Medium, Hard)\ncy.contains('Easy').should('be.visible');\ncy.contains('Medium').should('be.visible');\ncy.contains('Hard').should('be.visible');\ncy.contains('.card', 'Easy').find('a.btn-primary') // Cari elemen <a> dengan class btn-primary (tombol biru)\n.should('contain', 'Start Lesson').click();\n// Berdasarkan inspect element Gambar 2, href Easy mengarah ke .../detail/1\ncy.url({\n  timeout: 30000\n}).should('include', '/detail/');\n// (Opsional) Pastikan tidak ada error 404/500\ncy.get('body').should('not.contain', '404 Not Found');",
               "err": {},
-              "uuid": "1d787b87-30dd-42fe-987e-7e2409eba8e6",
-              "parentUUID": "3db517fd-79c8-4f57-9bda-e58a43028ebb",
+              "uuid": "a04625f3-213e-432d-a96f-506b1e2cf175",
+              "parentUUID": "b72aa514-c482-40cf-9ce0-fdb42f60c1c8",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "1d787b87-30dd-42fe-987e-7e2409eba8e6"
+            "a04625f3-213e-432d-a96f-506b1e2cf175"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 13527,
+          "duration": 8618,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
