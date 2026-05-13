@@ -1,0 +1,148 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-05-10T11:09:36.710Z",
+    "end": "2026-05-10T11:10:15.961Z",
+    "duration": 39251,
+    "testsRegistered": 3,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 2,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "49b1d83a-9076-4a75-ba4a-9ab3bb0b8e56",
+      "title": "",
+      "fullFile": "cypress\\e2e\\functional-suitability\\logout.cy.js",
+      "file": "cypress\\e2e\\functional-suitability\\logout.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8bcec421-41a0-4050-a89f-851a0fca9755",
+          "title": "Logout Feature - Bajapro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "FS_Dashboard_001 - Menampilkan dropdown logout",
+              "fullTitle": "Logout Feature - Bajapro FS_Dashboard_001 - Menampilkan dropdown logout",
+              "timedOut": null,
+              "duration": 12015,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('nav').contains('@').click();\ncy.contains('Logout').should('be.visible');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://103.182.234.231:90/login\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 103.182.234.231:90\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Logout Feature - Bajapro`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://103.182.234.231:90/login\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 103.182.234.231:90\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Logout Feature - Bajapro`\n    at <unknown> (http://labai.polinema.ac.id:90/__cypress/runner/cypress_runner.js:134511:74)\n    at visitFailedByErr (http://labai.polinema.ac.id:90/__cypress/runner/cypress_runner.js:134085:12)\n    at <unknown> (http://labai.polinema.ac.id:90/__cypress/runner/cypress_runner.js:134510:11)\n    at tryCatcher (http://labai.polinema.ac.id:90/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://labai.polinema.ac.id:90/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://labai.polinema.ac.id:90/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://labai.polinema.ac.id:90/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://labai.polinema.ac.id:90/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (http://labai.polinema.ac.id:90/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://labai.polinema.ac.id:90/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://labai.polinema.ac.id:90/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://labai.polinema.ac.id:90/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://test-bajapro/./cypress/e2e/functional-suitability/logout.cy.js:5:7)\n\nFrom Node.js Internals:\n  Error: connect ECONNREFUSED 103.182.234.231:90\n      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)",
+                "diff": null
+              },
+              "uuid": "2e55b78a-9557-47ab-9c46-61c0592c8805",
+              "parentUUID": "8bcec421-41a0-4050-a89f-851a0fca9755",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_Dashboard_002 - User berhasil logout",
+              "fullTitle": "Logout Feature - Bajapro FS_Dashboard_002 - User berhasil logout",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('nav').contains('@').click();\ncy.contains('Logout').click();\ncy.url().should('include', '/login');",
+              "err": {},
+              "uuid": "311f042e-6445-4060-a8e4-a06ed534201b",
+              "parentUUID": "8bcec421-41a0-4050-a89f-851a0fca9755",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "FS_Dashboard_003_BACK - Tidak bisa akses dashboard via tombol back",
+              "fullTitle": "Logout Feature - Bajapro FS_Dashboard_003_BACK - Tidak bisa akses dashboard via tombol back",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('nav').contains('@').click();\ncy.contains('Logout').click();\ncy.url().should('include', '/login');\ncy.go('back');\ncy.url().should('include', '/login');",
+              "err": {},
+              "uuid": "021b58ab-5e11-45b4-93a9-376ff481a116",
+              "parentUUID": "8bcec421-41a0-4050-a89f-851a0fca9755",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "2e55b78a-9557-47ab-9c46-61c0592c8805"
+          ],
+          "pending": [],
+          "skipped": [
+            "311f042e-6445-4060-a8e4-a06ed534201b",
+            "021b58ab-5e11-45b4-93a9-376ff481a116"
+          ],
+          "duration": 12015,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

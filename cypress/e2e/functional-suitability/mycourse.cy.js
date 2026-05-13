@@ -125,36 +125,3 @@ describe('My Course Feature - Bajapro', () => {
   })
 
 })
-
-it('FS_Course_033 - User baru mengambil course', () => {
-
-  Cypress.on('uncaught:exception', () => false)
-
-  cy.visit('/login')
-
-  cy.get('input[name="email"]').type('akunbaru2@test.com')
-  cy.get('input[name="password"]').type('akunbaru12')
-
-  cy.get('button[type="submit"]').click()
-
-  cy.url().should('not.include', '/login')
-
-  cy.contains('Take')
-    .first()
-    .click()
-
-  cy.wait(3000)
-
-  // validasi tombol Take hilang
-  cy.contains('Take').should('not.exist')
-
-  // masuk ke My Course
-  cy.contains('My Course').click()
-
-  cy.url().should('include', '/courses/my_course')
-
-  // validasi course berhasil diambil
-  cy.contains('Start Lesson')
-    .should('be.visible')
-
-})

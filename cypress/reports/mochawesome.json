@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-05-10T11:04:21.786Z",
+    "end": "2026-05-10T11:04:44.498Z",
+    "duration": 22712,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c69533d9-fed0-471c-8e8d-67aa2d7293e9",
+      "title": "",
+      "fullFile": "cypress\\e2e\\functional-suitability\\course-detail.cy.js",
+      "file": "cypress\\e2e\\functional-suitability\\course-detail.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f44576f7-ab27-43e4-9785-91392fb910ba",
+          "title": "Course Detail Feature",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "FS_Course_Detail_001 - Informasi course tampil",
+              "fullTitle": "Course Detail Feature FS_Course_Detail_001 - Informasi course tampil",
+              "timedOut": null,
+              "duration": 14382,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Nama course (contoh: Java)\ncy.get('body').should('contain.text', 'Java');\n// Deskripsi course\ncy.get('body').then($body => {\n  const text = $body.text();\n  expect(text.length).to.be.greaterThan(0);\n});\n// Lesson & student\ncy.contains('Lesson').should('exist');\ncy.contains('Student').should('exist');",
+              "err": {},
+              "uuid": "80e24063-a465-4c7c-ae39-620d65bf47ae",
+              "parentUUID": "f44576f7-ab27-43e4-9785-91392fb910ba",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_Course_Detail_002 - Achievement Badge tampil",
+              "fullTitle": "Course Detail Feature FS_Course_Detail_002 - Achievement Badge tampil",
+              "timedOut": null,
+              "duration": 4375,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// scroll ke bawah (biar section muncul)\ncy.scrollTo('bottom');\n// cek tabel badge\ncy.contains('Achievement').should('exist');\ncy.contains('Badge Name').should('exist');\ncy.contains('Badge Point Min').should('exist');\ncy.contains('Badge Point Max').should('exist');",
+              "err": {},
+              "uuid": "6f635454-6586-4b25-8004-c824ce658f1c",
+              "parentUUID": "f44576f7-ab27-43e4-9785-91392fb910ba",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_Course_Detail_003 - Leaderboard dalam course tampil",
+              "fullTitle": "Course Detail Feature FS_Course_Detail_003 - Leaderboard dalam course tampil",
+              "timedOut": null,
+              "duration": 3349,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.scrollTo('bottom');\n// cek section leaderboard\ncy.contains('Leaderboard').should('exist');\n// validasi header\ncy.contains('Rank').should('exist');\ncy.contains('Name').should('exist');\ncy.contains('Point').should('exist');\ncy.contains('Progress').should('exist');\n// validasi ada data\ncy.get('table tbody tr').should('have.length.greaterThan', 0);",
+              "err": {},
+              "uuid": "63108dc7-7056-4522-9ee1-d497d692e8b6",
+              "parentUUID": "f44576f7-ab27-43e4-9785-91392fb910ba",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "80e24063-a465-4c7c-ae39-620d65bf47ae",
+            "6f635454-6586-4b25-8004-c824ce658f1c",
+            "63108dc7-7056-4522-9ee1-d497d692e8b6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 22106,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

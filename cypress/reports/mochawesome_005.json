@@ -1,0 +1,224 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-05-10T11:08:58.035Z",
+    "end": "2026-05-10T11:09:32.683Z",
+    "duration": 34648,
+    "testsRegistered": 7,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 6,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "c563ede9-b602-49e4-abe5-942ced5c6f1e",
+      "title": "",
+      "fullFile": "cypress\\e2e\\functional-suitability\\login.cy.js",
+      "file": "cypress\\e2e\\functional-suitability\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fd94b8d8-869b-4e73-b72b-c353a1387ce0",
+          "title": "Login Feature - Bajapro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "FS_Login_001 - Login berhasil dengan data valid",
+              "fullTitle": "Login Feature - Bajapro FS_Login_001 - Login berhasil dengan data valid",
+              "timedOut": null,
+              "duration": 11113,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login('zulfanuha016@gmail.com', 'Zulfanuha14');\ncy.url().should('not.include', '/login');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://103.182.234.231:90/login\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 103.182.234.231:90\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Login Feature - Bajapro`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://103.182.234.231:90/login\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 103.182.234.231:90\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Login Feature - Bajapro`\n    at <unknown> (http://labai.polinema.ac.id:90/__cypress/runner/cypress_runner.js:134511:74)\n    at visitFailedByErr (http://labai.polinema.ac.id:90/__cypress/runner/cypress_runner.js:134085:12)\n    at <unknown> (http://labai.polinema.ac.id:90/__cypress/runner/cypress_runner.js:134510:11)\n    at tryCatcher (http://labai.polinema.ac.id:90/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://labai.polinema.ac.id:90/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://labai.polinema.ac.id:90/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://labai.polinema.ac.id:90/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://labai.polinema.ac.id:90/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (http://labai.polinema.ac.id:90/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://labai.polinema.ac.id:90/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://labai.polinema.ac.id:90/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://labai.polinema.ac.id:90/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://test-bajapro/./cypress/e2e/functional-suitability/login.cy.js:5:7)\n\nFrom Node.js Internals:\n  Error: connect ECONNREFUSED 103.182.234.231:90\n      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)",
+                "diff": null
+              },
+              "uuid": "81bee9a0-d82a-419d-959b-adc53b639a10",
+              "parentUUID": "fd94b8d8-869b-4e73-b72b-c353a1387ce0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_Login_002 - Email salah",
+              "fullTitle": "Login Feature - Bajapro FS_Login_002 - Email salah",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login('salah@test.com', 'Zulfanuha14');\ncy.contains('These credentials do not match our records').should('be.visible');",
+              "err": {},
+              "uuid": "4d9c3f01-037b-4619-92c0-cd19864a8dba",
+              "parentUUID": "fd94b8d8-869b-4e73-b72b-c353a1387ce0",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "FS_Login_003 - Password salah",
+              "fullTitle": "Login Feature - Bajapro FS_Login_003 - Password salah",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login('zulfanuha016@gmail.com', 'SalahPassword');\ncy.contains('These credentials do not match our records').should('be.visible');",
+              "err": {},
+              "uuid": "36776379-a956-4ca3-b165-385376454b5d",
+              "parentUUID": "fd94b8d8-869b-4e73-b72b-c353a1387ce0",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "FS_Login_004 - Semua field kosong",
+              "fullTitle": "Login Feature - Bajapro FS_Login_004 - Semua field kosong",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('button[type=\"submit\"]').click();\ncy.get('input[name=\"email\"]:invalid').should('exist');",
+              "err": {},
+              "uuid": "2c609505-e83a-4136-9e2f-30974fcca0cc",
+              "parentUUID": "fd94b8d8-869b-4e73-b72b-c353a1387ce0",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "FS_Login_005 - Email kosong",
+              "fullTitle": "Login Feature - Bajapro FS_Login_005 - Email kosong",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('input[name=\"password\"]').type('Zulfanuha14');\ncy.get('button[type=\"submit\"]').click();\ncy.get('input[name=\"email\"]:invalid').should('exist');",
+              "err": {},
+              "uuid": "43b3ebdc-014f-4b56-bb64-d235ef9ffc22",
+              "parentUUID": "fd94b8d8-869b-4e73-b72b-c353a1387ce0",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "FS_Login_006 - Password kosong",
+              "fullTitle": "Login Feature - Bajapro FS_Login_006 - Password kosong",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('input[name=\"email\"]').type('zulfanuha016@gmail.com');\ncy.get('button[type=\"submit\"]').click();\ncy.get('input[name=\"password\"]:invalid').should('exist');",
+              "err": {},
+              "uuid": "938db164-4a8d-4f4f-858c-a8403ba4eeb4",
+              "parentUUID": "fd94b8d8-869b-4e73-b72b-c353a1387ce0",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "FS_Login_007 - Pindah ke halaman register",
+              "fullTitle": "Login Feature - Bajapro FS_Login_007 - Pindah ke halaman register",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains(/don't have an account/i).should('be.visible').click();\ncy.url().should('include', '/register');",
+              "err": {},
+              "uuid": "49c224c4-bfbd-467b-bdf6-6de20412be6f",
+              "parentUUID": "fd94b8d8-869b-4e73-b72b-c353a1387ce0",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "81bee9a0-d82a-419d-959b-adc53b639a10"
+          ],
+          "pending": [],
+          "skipped": [
+            "4d9c3f01-037b-4619-92c0-cd19864a8dba",
+            "36776379-a956-4ca3-b165-385376454b5d",
+            "2c609505-e83a-4136-9e2f-30974fcca0cc",
+            "43b3ebdc-014f-4b56-bb64-d235ef9ffc22",
+            "938db164-4a8d-4f4f-858c-a8403ba4eeb4",
+            "49c224c4-bfbd-467b-bdf6-6de20412be6f"
+          ],
+          "duration": 11113,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

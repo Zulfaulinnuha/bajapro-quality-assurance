@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-05-13T01:56:12.266Z",
+    "end": "2026-05-13T01:56:24.018Z",
+    "duration": 11752,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3a991714-6f12-412b-a466-6e91d9f34ef9",
+      "title": "",
+      "fullFile": "cypress\\e2e\\functional-suitability\\start_lesson.cy.js",
+      "file": "cypress\\e2e\\functional-suitability\\start_lesson.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7ddd9ceb-19db-4430-a498-af4367b34ec6",
+          "title": "Flow Memulai Pelajaran (Start Lesson)",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User dapat memilih Course Java lalu masuk ke Level Easy",
+              "fullTitle": "Flow Memulai Pelajaran (Start Lesson) User dapat memilih Course Java lalu masuk ke Level Easy",
+              "timedOut": null,
+              "duration": 11479,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('.card', 'Java') // Cari kotak kartu Java\n.contains('Start Lesson') // Cari teks Start Lesson di dalam kotak itu\n.click();\ncy.url({\n  timeout: 20000\n}).should('include', '/courses/level');\ncy.contains('h2', 'Start Your Lesson now').should('be.visible');\n// 3. Validasi ada 3 Pilihan Level (Easy, Medium, Hard)\ncy.contains('Easy').should('be.visible');\ncy.contains('Medium').should('be.visible');\ncy.contains('Hard').should('be.visible');\ncy.contains('.card', 'Easy').find('a.btn-primary') // Cari elemen <a> dengan class btn-primary (tombol biru)\n.should('contain', 'Start Lesson').click();\n// Berdasarkan inspect element Gambar 2, href Easy mengarah ke .../detail/1\ncy.url({\n  timeout: 30000\n}).should('include', '/detail/');\n// (Opsional) Pastikan tidak ada error 404/500\ncy.get('body').should('not.contain', '404 Not Found');",
+              "err": {},
+              "uuid": "5c1c6675-3168-4d16-8be7-80e77ce030bb",
+              "parentUUID": "7ddd9ceb-19db-4430-a498-af4367b34ec6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5c1c6675-3168-4d16-8be7-80e77ce030bb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11479,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
