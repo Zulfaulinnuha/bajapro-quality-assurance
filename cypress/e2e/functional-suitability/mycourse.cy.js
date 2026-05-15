@@ -13,21 +13,21 @@ describe('My Course Feature - Bajapro', () => {
     cy.contains('Take Your Lesson now').should('be.visible')
   })
 
-  it('FS_Course_003 - Masuk ke halaman level', () => {
+  it('FS_Course_002 - Masuk ke halaman level', () => {
     cy.contains('My Course').click()
     cy.contains('Start Lesson').click()
     cy.url().should('include', '/courses/level')
     cy.contains('Start Your Lesson now').should('be.visible')
   })
 
-  it('FS_Course_004 - Pilih Level Easy', () => {
+  it('FS_Course_003 - Pilih Level Easy', () => {
     cy.contains('My Course').click()
     cy.contains('Start Lesson').first().click()
     cy.contains('Easy').parent().contains('Start Lesson').click()
     cy.url().should('include', '/detail')
   })
 
-  it('FS_Course_005 - Level Medium terkunci', () => {
+  it('FS_Course_004 - Level Medium terkunci', () => {
     cy.contains('My Course').click()
     cy.contains('Start Lesson').click()
     cy.contains('Medium')
@@ -36,7 +36,7 @@ describe('My Course Feature - Bajapro', () => {
       .should('have.attr', 'aria-disabled', 'true')
   })
 
-   it('FS_Course_006 - Akses materi terbuka', () => {
+   it('FS_Course_005 - Akses materi terbuka', () => {
     cy.contains('My Course').click()
     cy.contains('Start Lesson').first().click()
 
@@ -53,7 +53,7 @@ describe('My Course Feature - Bajapro', () => {
     cy.contains('Variabel').should('be.visible')
   })
 
-  it('FS_Course_007 - Materi dalam accordion terkunci tidak bisa diakses', () => {
+  it('FS_Course_006 - Materi dalam accordion terkunci tidak bisa diakses', () => {
 
   cy.contains('My Course').click()
   cy.contains('Start Lesson').first().click()
@@ -88,7 +88,7 @@ describe('My Course Feature - Bajapro', () => {
 
 })
 
-  it('FS_Course_008 - Tampilan materi lengkap', () => {
+  it('FS_Course_007 - Tampilan materi lengkap', () => {
     cy.contains('My Course').click()
     cy.contains('Start Lesson').first().click()
 
@@ -106,7 +106,7 @@ describe('My Course Feature - Bajapro', () => {
     cy.contains("Let's Test").should('be.visible')
   })
 
-  it('FS_Course_009 - Akses Let’s Test', () => {
+  it('FS_Course_008 - Akses Let’s Test', () => {
     cy.contains('My Course').click()
     cy.contains('Start Lesson').first().click()
 
