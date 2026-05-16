@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-05-15T03:53:24.242Z",
+    "end": "2026-05-15T03:53:29.056Z",
+    "duration": 4814,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "10150184-69c2-4366-b5d4-b83c10f14fc5",
+      "title": "",
+      "fullFile": "cypress\\e2e\\functional-suitability\\myreport_ts009.cy.js",
+      "file": "cypress\\e2e\\functional-suitability\\myreport_ts009.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c5a58141-db71-4c9d-a4d5-452ddb8d7753",
+          "title": "FS_Report_009 - User belum mengerjakan apapun",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User belum mengerjakan apapun",
+              "fullTitle": "FS_Report_009 - User belum mengerjakan apapun User belum mengerjakan apapun",
+              "timedOut": null,
+              "duration": 4762,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "Cypress.on('uncaught:exception', () => false);\ncy.clearCookies();\ncy.clearLocalStorage();\ncy.visit('/login');\ncy.get('input[name=\"email\"]').type('akunbaru@test.com');\ncy.get('input[name=\"password\"]').type('akunbaru12');\ncy.get('button[type=\"submit\"]').click();\n// jangan terlalu keras validasi URL (karena kadang redirect aneh)\ncy.contains('My Report', {\n  timeout: 10000\n}).click();\ncy.contains('0').should('exist');\ncy.contains('0%').should('exist');\ncy.get('body').should('not.contain', 'Detail');",
+              "err": {},
+              "uuid": "3850b6ac-1669-4d7e-bec8-176914a1c455",
+              "parentUUID": "c5a58141-db71-4c9d-a4d5-452ddb8d7753",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3850b6ac-1669-4d7e-bec8-176914a1c455"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4762,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

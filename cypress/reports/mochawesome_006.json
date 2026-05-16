@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-05-15T03:51:49.369Z",
+    "end": "2026-05-15T03:52:04.266Z",
+    "duration": 14897,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e68a1843-7528-41e9-be19-eb8276afe12c",
+      "title": "",
+      "fullFile": "cypress\\e2e\\functional-suitability\\logout.cy.js",
+      "file": "cypress\\e2e\\functional-suitability\\logout.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c1f0d6ee-f955-415c-8fee-b5663d64b5e8",
+          "title": "Logout Feature - Bajapro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "FS_Dashboard_001 - Menampilkan dropdown logout",
+              "fullTitle": "Logout Feature - Bajapro FS_Dashboard_001 - Menampilkan dropdown logout",
+              "timedOut": null,
+              "duration": 5213,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('nav').contains('@').click();\ncy.contains('Logout').should('be.visible');",
+              "err": {},
+              "uuid": "f9bc9395-ee9e-4b73-9894-232c10108d96",
+              "parentUUID": "c1f0d6ee-f955-415c-8fee-b5663d64b5e8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_Dashboard_002 - User berhasil logout",
+              "fullTitle": "Logout Feature - Bajapro FS_Dashboard_002 - User berhasil logout",
+              "timedOut": null,
+              "duration": 3947,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('nav').contains('@').click();\ncy.contains('Logout').click();\ncy.url().should('include', '/login');",
+              "err": {},
+              "uuid": "9c2c0bb7-5d5b-4914-b087-9c31f007df85",
+              "parentUUID": "c1f0d6ee-f955-415c-8fee-b5663d64b5e8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_Dashboard_003_BACK - Tidak bisa akses dashboard via tombol back",
+              "fullTitle": "Logout Feature - Bajapro FS_Dashboard_003_BACK - Tidak bisa akses dashboard via tombol back",
+              "timedOut": null,
+              "duration": 4369,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('nav').contains('@').click();\ncy.contains('Logout').click();\ncy.url().should('include', '/login');\ncy.go('back');\ncy.url().should('include', '/login');",
+              "err": {},
+              "uuid": "ad31982d-fb29-4a37-a411-34a8c8047cd5",
+              "parentUUID": "c1f0d6ee-f955-415c-8fee-b5663d64b5e8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f9bc9395-ee9e-4b73-9894-232c10108d96",
+            "9c2c0bb7-5d5b-4914-b087-9c31f007df85",
+            "ad31982d-fb29-4a37-a411-34a8c8047cd5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 13529,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

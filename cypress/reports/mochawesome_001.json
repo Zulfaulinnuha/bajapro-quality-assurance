@@ -1,0 +1,200 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-05-15T03:49:26.274Z",
+    "end": "2026-05-15T03:49:57.785Z",
+    "duration": 31511,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "68f20d3b-85b2-44c3-9771-d62f37969e62",
+      "title": "",
+      "fullFile": "cypress\\e2e\\functional-suitability\\dashboard.cy.js",
+      "file": "cypress\\e2e\\functional-suitability\\dashboard.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d9419f28-843b-460b-982a-e7daa3664348",
+          "title": "Dashboard Feature",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "FS_Dashboard_001 - Halaman utama tampil",
+              "fullTitle": "Dashboard Feature FS_Dashboard_001 - Halaman utama tampil",
+              "timedOut": null,
+              "duration": 6085,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.url().should('not.include', '/login');\ncy.contains('Take Your Lesson now').should('exist');\n// pastikan ada card course\ncy.contains('Java').should('exist');",
+              "err": {},
+              "uuid": "10578419-7f1c-47a1-9200-8a4671148508",
+              "parentUUID": "d9419f28-843b-460b-982a-e7daa3664348",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_Dashboard_002 - Navigasi lewat logo",
+              "fullTitle": "Dashboard Feature FS_Dashboard_002 - Navigasi lewat logo",
+              "timedOut": null,
+              "duration": 2231,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// pindah dulu ke halaman lain\ncy.contains('My Course').click();\ncy.url().should('include', '/courses');\n// klik logo Bajapro\ncy.get('a#logo').click();\n// kembali ke dashboard\ncy.url().should('not.include', '/courses');\ncy.contains('Take Your Lesson now').should('exist');",
+              "err": {},
+              "uuid": "86ffcaa3-e14b-4730-be9c-e3355cb54f69",
+              "parentUUID": "d9419f28-843b-460b-982a-e7daa3664348",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_Dashboard_003 - Card course tampil lengkap",
+              "fullTitle": "Dashboard Feature FS_Dashboard_003 - Card course tampil lengkap",
+              "timedOut": null,
+              "duration": 3021,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Java').should('exist');\n// jumlah lesson\ncy.contains('Lessons').should('exist');\n// jumlah student\ncy.contains('Students').should('exist');\n// tombol detail\ncy.contains('See Detail').should('exist');",
+              "err": {},
+              "uuid": "491f9688-d936-46db-9e21-24c4a270ed91",
+              "parentUUID": "d9419f28-843b-460b-982a-e7daa3664348",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_Dashboard_004 - Buka detail course",
+              "fullTitle": "Dashboard Feature FS_Dashboard_004 - Buka detail course",
+              "timedOut": null,
+              "duration": 3171,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('See Detail').click();\ncy.url().should('include', '/courses/detail');\ncy.contains('Lesson Content').should('exist');",
+              "err": {},
+              "uuid": "07e8aacd-5b19-4e3e-b7c2-d19ae1a736f7",
+              "parentUUID": "d9419f28-843b-460b-982a-e7daa3664348",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_Dashboard_005 - User baru melihat tombol Take",
+              "fullTitle": "Dashboard Feature FS_Dashboard_005 - User baru melihat tombol Take",
+              "timedOut": null,
+              "duration": 9709,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// logout dulu (kalau ada tombol logout)\ncy.contains('testing@gmail.com').click();\ncy.contains('Logout').click();\n// login akun baru\ncy.visit('/login');\ncy.get('input[name=\"email\"]').type('akunbaru@test.com');\ncy.get('input[name=\"password\"]').type('akunbaru12');\ncy.get('button[type=\"submit\"]').click();\ncy.contains('Take').should('exist');\ncy.contains('See Detail').should('exist');",
+              "err": {},
+              "uuid": "2a7c6a19-85cc-4bfb-939c-10ff01a111a2",
+              "parentUUID": "d9419f28-843b-460b-982a-e7daa3664348",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_Dashboard_006 - Klik Take course",
+              "fullTitle": "Dashboard Feature FS_Dashboard_006 - Klik Take course",
+              "timedOut": null,
+              "duration": 6905,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// gunakan akun baru (biar tombol Take muncul)\ncy.clearCookies();\ncy.clearLocalStorage();\ncy.visit('/login');\ncy.get('input[name=\"email\"]').type('akunbaru@test.com');\ncy.get('input[name=\"password\"]').type('akunbaru12');\ncy.get('button[type=\"submit\"]').click();\ncy.contains('Take').first().click();\n// validasi notifikasi sukses\ncy.get('body').then($body => {\n  if ($body.text().toLowerCase().includes('success')) {\n    cy.contains(/success/i).should('exist');\n  } else {\n    cy.log('Notifikasi sukses tidak muncul (mungkin silent success)');\n  }\n});",
+              "err": {},
+              "uuid": "b44c4309-0578-460b-b773-66c853273e4f",
+              "parentUUID": "d9419f28-843b-460b-982a-e7daa3664348",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "10578419-7f1c-47a1-9200-8a4671148508",
+            "86ffcaa3-e14b-4730-be9c-e3355cb54f69",
+            "491f9688-d936-46db-9e21-24c4a270ed91",
+            "07e8aacd-5b19-4e3e-b7c2-d19ae1a736f7",
+            "2a7c6a19-85cc-4bfb-939c-10ff01a111a2",
+            "b44c4309-0578-460b-b773-66c853273e4f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 31122,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

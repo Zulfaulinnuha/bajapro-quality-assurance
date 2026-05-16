@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-05-16T14:09:27.850Z",
+    "end": "2026-05-16T14:09:41.672Z",
+    "duration": 13822,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "484fd5f1-8abd-4154-97c1-b14b9fbb1bfa",
+      "title": "",
+      "fullFile": "cypress\\e2e\\perfomance-efficiency\\login-performance.cy.js",
+      "file": "cypress\\e2e\\perfomance-efficiency\\login-performance.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0b925966-8d08-4ead-8f87-75360609140a",
+          "title": "Performance Efficiency - Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "FS_PERF_001 - Waktu respon halaman login",
+              "fullTitle": "Performance Efficiency - Login FS_PERF_001 - Waktu respon halaman login",
+              "timedOut": null,
+              "duration": 1891,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const startTime = Date.now();\ncy.visit('http://103.182.234.231:90/login');\ncy.get('input[name=\"email\"]').should('be.visible').then(() => {\n  const duration = Date.now() - startTime;\n  cy.log(`Waktu respon halaman login: ${duration} ms`);\n  expect(duration).to.be.lessThan(MAX_RESPONSE_TIME);\n});",
+              "err": {},
+              "uuid": "69af04c8-0469-4faf-9615-1b84bc2e03ae",
+              "parentUUID": "0b925966-8d08-4ead-8f87-75360609140a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_PERF_002 - Waktu respon setelah login",
+              "fullTitle": "Performance Efficiency - Login FS_PERF_002 - Waktu respon setelah login",
+              "timedOut": null,
+              "duration": 2790,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://103.182.234.231:90/login');\ncy.get('input[name=\"email\"]').type(Cypress.env('EMAIL'));\ncy.get('input[name=\"password\"]').type(Cypress.env('PASSWORD'), {\n  log: false\n});\nconst startTime = Date.now();\ncy.get('button[type=\"submit\"]').click();\ncy.url({\n  timeout: 60000\n}).should('not.include', '/login').then(() => {\n  const duration = Date.now() - startTime;\n  cy.log(`Waktu respon login: ${duration} ms`);\n  expect(duration).to.be.lessThan(MAX_RESPONSE_TIME);\n});",
+              "err": {},
+              "uuid": "23e0d7b9-eb85-43f7-abd0-4591e8e0cff8",
+              "parentUUID": "0b925966-8d08-4ead-8f87-75360609140a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_PERF_010 - Konsistensi waktu respon login",
+              "fullTitle": "Performance Efficiency - Login FS_PERF_010 - Konsistensi waktu respon login",
+              "timedOut": null,
+              "duration": 6916,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "function runLoginTest(iteration) {\n  cy.visit('http://103.182.234.231:90/login');\n  cy.get('input[name=\"email\"]').clear().type(Cypress.env('EMAIL'));\n  cy.get('input[name=\"password\"]').clear().type(Cypress.env('PASSWORD'), {\n    log: false\n  });\n  const startTime = Date.now();\n  cy.get('button[type=\"submit\"]').click();\n  cy.url({\n    timeout: 60000\n  }).should('not.include', '/login').then(() => {\n    const duration = Date.now() - startTime;\n    cy.log(`Percobaan ${iteration}: ${duration} ms`);\n    expect(duration).to.be.lessThan(MAX_CONSISTENCY_TIME);\n  });\n}\nrunLoginTest(1);\ncy.clearCookies();\ncy.clearLocalStorage();\nrunLoginTest(2);\ncy.clearCookies();\ncy.clearLocalStorage();\nrunLoginTest(3);",
+              "err": {},
+              "uuid": "86bdd535-5228-434e-ba74-819da94e80cc",
+              "parentUUID": "0b925966-8d08-4ead-8f87-75360609140a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "69af04c8-0469-4faf-9615-1b84bc2e03ae",
+            "23e0d7b9-eb85-43f7-abd0-4591e8e0cff8",
+            "86bdd535-5228-434e-ba74-819da94e80cc"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11597,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

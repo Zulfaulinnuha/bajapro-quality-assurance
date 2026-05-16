@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-05-16T14:08:57.795Z",
+    "end": "2026-05-16T14:09:25.734Z",
+    "duration": 27939,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ebaeeafb-f0cd-4386-bc16-e82a4d394ba0",
+      "title": "",
+      "fullFile": "cypress\\e2e\\perfomance-efficiency\\feature-performance.cy.js",
+      "file": "cypress\\e2e\\perfomance-efficiency\\feature-performance.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f0fbd768-f2c3-4aa5-bc72-99fe606b2a73",
+          "title": "Performance Efficiency - Feature",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "FS_PERF_003 - Waktu respon halaman My Course",
+              "fullTitle": "Performance Efficiency - Feature FS_PERF_003 - Waktu respon halaman My Course",
+              "timedOut": null,
+              "duration": 8150,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const startTime = Date.now();\ncy.contains('My Course').click();\ncy.url({\n  timeout: 60000\n}).should('include', '/courses/my_course').then(() => {\n  const duration = Date.now() - startTime;\n  cy.log(`Waktu respon My Course: ${duration} ms`);\n  expect(duration).to.be.lessThan(MAX_RESPONSE_TIME);\n});",
+              "err": {},
+              "uuid": "420907c7-cb74-49d8-85b5-6bdf5d486b66",
+              "parentUUID": "f0fbd768-f2c3-4aa5-bc72-99fe606b2a73",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_PERF_004 - Waktu respon detail course",
+              "fullTitle": "Performance Efficiency - Feature FS_PERF_004 - Waktu respon detail course",
+              "timedOut": null,
+              "duration": 3243,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('See Detail').first().should('be.visible');\nconst startTime = Date.now();\ncy.contains('See Detail').first().click();\ncy.url({\n  timeout: 60000\n}).should('include', '/courses').then(() => {\n  const duration = Date.now() - startTime;\n  cy.log(`Waktu respon detail course: ${duration} ms`);\n  expect(duration).to.be.lessThan(MAX_RESPONSE_TIME);\n});",
+              "err": {},
+              "uuid": "00ca7fe4-d3ea-4d3c-ad6b-ba7d1de50634",
+              "parentUUID": "f0fbd768-f2c3-4aa5-bc72-99fe606b2a73",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_PERF_005 - Waktu respon halaman level",
+              "fullTitle": "Performance Efficiency - Feature FS_PERF_005 - Waktu respon halaman level",
+              "timedOut": null,
+              "duration": 3676,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('My Course').click();\nconst startTime = Date.now();\ncy.contains('Start Lesson').first().click();\ncy.url({\n  timeout: 60000\n}).should('include', '/courses/level').then(() => {\n  const duration = Date.now() - startTime;\n  cy.log(`Waktu respon halaman level: ${duration} ms`);\n  expect(duration).to.be.lessThan(MAX_RESPONSE_TIME);\n});",
+              "err": {},
+              "uuid": "273cca34-7719-48df-bd38-bb8acefc686d",
+              "parentUUID": "f0fbd768-f2c3-4aa5-bc72-99fe606b2a73",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_PERF_006 - Waktu respon membuka materi",
+              "fullTitle": "Performance Efficiency - Feature FS_PERF_006 - Waktu respon membuka materi",
+              "timedOut": null,
+              "duration": 6151,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('My Course').click();\ncy.contains('Start Lesson').first().click();\ncy.contains('Easy').parent().contains('Start Lesson').click();\nconst startTime = Date.now();\ncy.contains('Tipe Data, Variabel dan Operator').first().click({\n  force: true\n});\ncy.get('iframe', {\n  timeout: 60000\n}).should('exist').then(() => {\n  const duration = Date.now() - startTime;\n  cy.log(`Waktu respon membuka materi: ${duration} ms`);\n  expect(duration).to.be.lessThan(MAX_RESPONSE_TIME);\n});",
+              "err": {},
+              "uuid": "a69cbf30-63b1-4c21-bff2-215cbabca2c2",
+              "parentUUID": "f0fbd768-f2c3-4aa5-bc72-99fe606b2a73",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_PERF_007 - Waktu respon halaman coding",
+              "fullTitle": "Performance Efficiency - Feature FS_PERF_007 - Waktu respon halaman coding",
+              "timedOut": null,
+              "duration": 4822,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('My Course').click();\ncy.contains('Start Lesson').first().click();\ncy.contains('Easy').parent().contains('Start Lesson').click();\ncy.contains('Tipe Data, Variabel dan Operator').first().click({\n  force: true\n});\nconst startTime = Date.now();\ncy.contains(\"Let's Test\").click();\ncy.url({\n  timeout: 60000\n}).should('include', '/code').then(() => {\n  const duration = Date.now() - startTime;\n  cy.log(`Waktu respon halaman coding: ${duration} ms`);\n  expect(duration).to.be.lessThan(MAX_RESPONSE_TIME);\n});",
+              "err": {},
+              "uuid": "8dd5f28f-fd3f-42c9-a310-1647a2165041",
+              "parentUUID": "f0fbd768-f2c3-4aa5-bc72-99fe606b2a73",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "420907c7-cb74-49d8-85b5-6bdf5d486b66",
+            "00ca7fe4-d3ea-4d3c-ad6b-ba7d1de50634",
+            "273cca34-7719-48df-bd38-bb8acefc686d",
+            "a69cbf30-63b1-4c21-bff2-215cbabca2c2",
+            "8dd5f28f-fd3f-42c9-a310-1647a2165041"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 26042,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
