@@ -1,0 +1,127 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-05-19T05:32:18.695Z",
+    "end": "2026-05-19T05:39:03.422Z",
+    "duration": 404727,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6e3e0e83-942b-424b-8962-5b9b258c642e",
+      "title": "",
+      "fullFile": "cypress\\e2e\\reliability\\material-reliability.cy.js",
+      "file": "cypress\\e2e\\reliability\\material-reliability.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1b607ac5-271a-47f8-bd74-72fb072fbfd9",
+          "title": "Reliability Testing - Material Access",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "FS_REL_005 - Stress test akses materi (30x)",
+              "fullTitle": "Reliability Testing - Material Access FS_REL_005 - Stress test akses materi (30x)",
+              "timedOut": null,
+              "duration": 252752,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let success = 0;\nCypress._.times(ITERATION, i => {\n  cy.visit('http://labai.polinema.ac.id:90/courses/my_course/1/1/detail/1', {\n    timeout: 180000,\n    failOnStatusCode: false\n  });\n  cy.wait(3000);\n  cy.contains('Tipe Data, Variabel dan Operator', {\n    timeout: 60000\n  }).first().should('be.visible').click({\n    force: true\n  });\n  cy.wait(3000);\n  cy.get('iframe', {\n    timeout: 60000\n  }).should('exist');\n  cy.then(() => {\n    success++;\n  });\n  cy.log(`Materi berhasil dibuka ke-${i + 1}`);\n});\ncy.then(() => {\n  const percentage = success / ITERATION * 100;\n  cy.log(`Success Rate: ${percentage}%`);\n  expect(success).to.equal(ITERATION);\n});",
+              "err": {},
+              "uuid": "26939343-85e6-4c89-8fab-eecb21783db4",
+              "parentUUID": "1b607ac5-271a-47f8-bd74-72fb072fbfd9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_REL_006 - Stress test halaman coding (30x)",
+              "fullTitle": "Reliability Testing - Material Access FS_REL_006 - Stress test halaman coding (30x)",
+              "timedOut": null,
+              "duration": 150808,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('My Course', {\n  timeout: 60000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(3000);\ncy.contains('Start Lesson', {\n  timeout: 60000\n}).first().should('be.visible').click({\n  force: true\n});\ncy.wait(3000);\ncy.contains('Easy', {\n  timeout: 60000\n}).parent().contains('Start Lesson').should('be.visible').click({\n  force: true\n});\ncy.wait(3000);\ncy.contains('Tipe Data, Variabel dan Operator', {\n  timeout: 60000\n}).first().should('be.visible').click({\n  force: true\n});\ncy.wait(3000);\nlet success = 0;\nCypress._.times(ITERATION, i => {\n  cy.contains(\"Let's Test\", {\n    timeout: 60000\n  }).should('be.visible').click({\n    force: true\n  });\n  cy.url({\n    timeout: 60000\n  }).should('include', '/code');\n  cy.then(() => {\n    success++;\n  });\n  cy.log(`Halaman coding berhasil ke-${i + 1}`);\n  cy.go('back');\n  cy.wait(3000);\n});\ncy.then(() => {\n  const percentage = success / ITERATION * 100;\n  cy.log(`Success Rate: ${percentage}%`);\n  expect(success).to.equal(ITERATION);\n});",
+              "err": {},
+              "uuid": "c222f31b-83ca-4db6-8553-0c98486324f7",
+              "parentUUID": "1b607ac5-271a-47f8-bd74-72fb072fbfd9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "26939343-85e6-4c89-8fab-eecb21783db4",
+            "c222f31b-83ca-4db6-8553-0c98486324f7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 403560,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

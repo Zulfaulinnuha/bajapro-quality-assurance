@@ -2,7 +2,7 @@ describe('Login Feature - Bajapro', () => {
 
   beforeEach(() => {
     Cypress.on('uncaught:exception', () => false)
-    cy.visit('http://103.182.234.231:90/login')
+    cy.visit('http://labai.polinema.ac.id:90/login')
     cy.url().should('include', '/login')
   })
 

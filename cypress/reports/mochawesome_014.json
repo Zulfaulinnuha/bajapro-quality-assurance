@@ -1,0 +1,127 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-05-19T05:18:13.484Z",
+    "end": "2026-05-19T05:18:21.857Z",
+    "duration": 8373,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bf2f64a5-4ab7-4353-ba47-4d78bb6b518a",
+      "title": "",
+      "fullFile": "cypress\\e2e\\perfomance-efficiency\\register-performance.cy.js",
+      "file": "cypress\\e2e\\perfomance-efficiency\\register-performance.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bbf56355-b024-4351-ae69-456a0e78e31a",
+          "title": "Register Performance - Bajapro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Register page load performance",
+              "fullTitle": "Register Performance - Bajapro Register page load performance",
+              "timedOut": null,
+              "duration": 3634,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const start = Date.now();\ncy.get('form').should('be.visible').then(() => {\n  const loadTime = Date.now() - start;\n  cy.log(`Register Load Time: ${loadTime} ms`);\n  expect(loadTime).to.be.lessThan(5000);\n});",
+              "err": {},
+              "uuid": "a9c77642-16c6-4e24-96b1-c6b9d776ee56",
+              "parentUUID": "bbf56355-b024-4351-ae69-456a0e78e31a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Register process performance",
+              "fullTitle": "Register Performance - Bajapro Register process performance",
+              "timedOut": null,
+              "duration": 4633,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const email = `cimit${Date.now()}@test.com`;\nconst start = Date.now();\ncy.get('input[name=\"name\"]').should('be.visible').type('Cimit');\ncy.get('select[name=\"class\"]').select('D4 Teknik Informatika');\ncy.get('input[name=\"email\"]').type(email);\ncy.get('input[name=\"password\"]').type('Cimit1234');\ncy.get('input[name=\"password_confirmation\"]').type('Cimit1234');\ncy.get('button[type=\"submit\"]').click();\ncy.url({\n  timeout: 60000\n}).should('not.include', '/register').then(() => {\n  const responseTime = Date.now() - start;\n  cy.log(`Register Response Time: ${responseTime} ms`);\n  expect(responseTime).to.be.lessThan(5000);\n});",
+              "err": {},
+              "uuid": "569b6147-1fd9-4870-9bfc-3b21968b482d",
+              "parentUUID": "bbf56355-b024-4351-ae69-456a0e78e31a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a9c77642-16c6-4e24-96b1-c6b9d776ee56",
+            "569b6147-1fd9-4870-9bfc-3b21968b482d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8267,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

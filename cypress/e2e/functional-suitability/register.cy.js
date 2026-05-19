@@ -5,7 +5,7 @@ describe('Register Feature - Bajapro', () => {
     Cypress.on('uncaught:exception', () => false)
 
     // buka login
-    cy.visit('http://103.182.234.231:90/login')
+    cy.visit('http://labai.polinema.ac.id:90/login')
 
     // tunggu sampai element siap (hindari token expired)
     cy.contains("Don't have an account")

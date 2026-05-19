@@ -1,0 +1,146 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-05-19T05:18:55.506Z",
+    "end": "2026-05-19T05:25:02.121Z",
+    "duration": 366615,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9eb45b5f-9c20-4d31-b141-ff96dfb5d5d0",
+      "title": "",
+      "fullFile": "cypress\\e2e\\reliability\\feature-reliability.cy.js",
+      "file": "cypress\\e2e\\reliability\\feature-reliability.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f034fcde-b6a2-4601-b682-bb5d77eb95fb",
+          "title": "Reliability Testing - Feature Navigation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "FS_REL_002 - Stress test My Course (30x)",
+              "fullTitle": "Reliability Testing - Feature Navigation FS_REL_002 - Stress test My Course (30x)",
+              "timedOut": null,
+              "duration": 82643,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let success = 0;\nCypress._.times(ITERATION, i => {\n  cy.visit('http://labai.polinema.ac.id:90/', {\n    timeout: 180000,\n    failOnStatusCode: false\n  });\n  cy.wait(2000);\n  cy.contains('My Course', {\n    timeout: 60000\n  }).should('be.visible').click({\n    force: true\n  });\n  cy.url({\n    timeout: 60000\n  }).should('include', '/courses/my_course');\n  success++;\n  cy.log(`My Course berhasil ke-${i + 1}`);\n});\ncy.then(() => {\n  const percentage = success / ITERATION * 100;\n  cy.log(`Success Rate: ${percentage}%`);\n  expect(success).to.eq(ITERATION);\n});",
+              "err": {},
+              "uuid": "278ad8d9-cf9a-4d51-9388-6c1b8ee99623",
+              "parentUUID": "f034fcde-b6a2-4601-b682-bb5d77eb95fb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_REL_003 - Stress test Detail Course (30x)",
+              "fullTitle": "Reliability Testing - Feature Navigation FS_REL_003 - Stress test Detail Course (30x)",
+              "timedOut": null,
+              "duration": 174832,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let success = 0;\nCypress._.times(ITERATION, i => {\n  cy.contains('See Detail', {\n    timeout: 60000\n  }).first().should('be.visible').click({\n    force: true\n  });\n  cy.url({\n    timeout: 60000\n  }).should('include', '/courses');\n  success++;\n  cy.log(`Detail Course berhasil ke-${i + 1}`);\n  cy.wait(2000);\n  cy.go('back');\n  cy.wait(3000);\n});\ncy.then(() => {\n  const percentage = success / ITERATION * 100;\n  cy.log(`Success Rate: ${percentage}%`);\n  expect(success).to.equal(ITERATION);\n});",
+              "err": {},
+              "uuid": "2fe46e17-105f-4a51-ba93-a74ab251b0b8",
+              "parentUUID": "f034fcde-b6a2-4601-b682-bb5d77eb95fb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FS_REL_004 - Stress test Start Lesson (30x)",
+              "fullTitle": "Reliability Testing - Feature Navigation FS_REL_004 - Stress test Start Lesson (30x)",
+              "timedOut": null,
+              "duration": 108893,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let success = 0;\nCypress._.times(ITERATION, i => {\n  cy.visit('http://labai.polinema.ac.id:90/courses/my_course', {\n    timeout: 180000,\n    failOnStatusCode: false\n  });\n  cy.wait(3000);\n  cy.contains('Start Lesson', {\n    timeout: 60000\n  }).first().should('be.visible').click({\n    force: true\n  });\n  cy.url({\n    timeout: 60000\n  }).should('include', '/courses/level');\n  success++;\n  cy.log(`Start Lesson berhasil ke-${i + 1}`);\n});\ncy.then(() => {\n  const percentage = success / ITERATION * 100;\n  cy.log(`Success Rate: ${percentage}%`);\n  expect(success).to.eq(ITERATION);\n});",
+              "err": {},
+              "uuid": "ab09100d-c044-4a35-9478-2c8e18c8c3a4",
+              "parentUUID": "f034fcde-b6a2-4601-b682-bb5d77eb95fb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "278ad8d9-cf9a-4d51-9388-6c1b8ee99623",
+            "2fe46e17-105f-4a51-ba93-a74ab251b0b8",
+            "ab09100d-c044-4a35-9478-2c8e18c8c3a4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 366368,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

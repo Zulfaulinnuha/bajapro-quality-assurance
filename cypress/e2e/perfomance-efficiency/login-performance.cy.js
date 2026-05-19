@@ -11,7 +11,7 @@ describe('Performance Efficiency - Login', () => {
 
         const startTime = Date.now()
 
-        cy.visit('http://103.182.234.231:90/login')
+        cy.visit('http://labai.polinema.ac.id:90/login')
 
         cy.get('input[name="email"]')
             .should('be.visible')
@@ -29,7 +29,7 @@ describe('Performance Efficiency - Login', () => {
 
     it('FS_PERF_002 - Waktu respon setelah login', () => {
 
-        cy.visit('http://103.182.234.231:90/login')
+        cy.visit('http://labai.polinema.ac.id:90/login')
 
         cy.get('input[name="email"]')
             .type(Cypress.env('EMAIL'))
@@ -59,7 +59,7 @@ describe('Performance Efficiency - Login', () => {
 
         function runLoginTest(iteration) {
 
-            cy.visit('http://103.182.234.231:90/login')
+            cy.visit('http://labai.polinema.ac.id:90/login')
 
             cy.get('input[name="email"]')
                 .clear()
